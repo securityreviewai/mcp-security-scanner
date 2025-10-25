@@ -1,0 +1,21 @@
+[project]
+name = "mcp-security-profiler"
+version = "0.1.0"
+description = "A CLI tool for scanning GitHub repositories for security issues"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.3.0",
+    "gitpython>=3.1.45",
+    "openai-agents>=0.4.2",
+    "pydantic>=2.12.3",
+    "pygithub>=2.8.1",
+    "python-dotenv>=1.1.1",
+]
+
+[project.scripts]
+mcp-security-profiler = "mcp_security_profiler.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
