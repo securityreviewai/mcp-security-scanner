@@ -28,6 +28,20 @@ cd mcp-security-profiler
 uv sync
 ```
 
+### MCP Server Dependencies
+
+The scanner uses MCP (Model Context Protocol) servers for advanced code analysis:
+
+- **ast-grep-mcp**: Pattern-based code search and analysis
+- **xray-mcp**: Code structure analysis
+
+These MCP servers are automatically installed and managed via `uvx` when you run a scan - no manual installation is required. The scanner will:
+1. Download and cache the MCP servers on first use
+2. Run them in isolated environments
+3. Automatically reuse cached versions on subsequent scans
+
+**Note**: The first scan may take slightly longer as MCP servers are being installed in the background.
+
 ## Setup
 
 ### 1. Configure Environment Variables
@@ -302,7 +316,6 @@ We welcome contributions to MCP Security Profiler! Here's how you can help:
    - Follow the existing code style
    - Add tests if applicable
    - Update documentation as needed
-4. **Test your changes**: Ensure all existing tests pass
 5. **Commit your changes**: `git commit -m "Add feature: description"`
 6. **Push to your fork**: `git push origin feature/your-feature-name`
 7. **Open a Pull Request**: Provide a clear description of the changes

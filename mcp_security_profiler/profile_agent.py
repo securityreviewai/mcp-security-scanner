@@ -93,7 +93,13 @@ async def run_mcp_scan_agent(path_str: str):
                 3e. Excessive Data Exposure - based on the functionality and access provided by the MCP Server.
                 3f. Authentication and Authorization Flaws - Long-lived API tokens, Lack of OAuth, Insecure Direct Object Reference, Broken functional authorization, mass assignment
                 3g. Server-side Request Forgery
-                3h. Other OWASP Top 10 vulnerabilities like Path Traversal, etc. 
+                3h. Possibility of Prompt Injection and Indirect Prompt Injection
+                3i. Other OWASP Top 10 vulnerabilities like Path Traversal, etc. 
+
+            NOTE: When dealing with Authentication Flaws, consider the following: 
+            * The authentication might require the user to use static API Tokens, passwords and so on from environment variables. These are findings, as they are not as strong as OAuth flows, but they are not the worst.
+            * Pay special attention to hardcoded authentication parameters if any. Those are particularly bad.
+            * Identify scenarios where credentials may be exposed as part of a prompt injection or indirect prompt injection.
             </task>
             
             <output>
